@@ -55,125 +55,47 @@ const validarFormulario = (e) => {
     
     switch (e.target.name) {
         case "nombre":
-                //console.log("funciona");
-                if (expresiones.nombre.test(e.target.value) || e.target.value=="") {
-                    document.getElementById('nombre').classList.remove('formulario__input-error');
-                    document.getElementById('nombre').classList.add('formulario__input-correcto');
-                    document.querySelector('i').classList.remove('formulario__validacion-estado-error');
-                    document.querySelector('i').classList.add('formulario__validacion-estado');
-                    document.querySelector('p').classList.remove('parrafoNombre-error');
-                   document.querySelector('p').classList.add('parrafoNombre');
-                    
-                }else{
-                    document.getElementById('nombre').classList.remove('formulario__input-correcto'); 
-                   document.getElementById('nombre').classList.add('formulario__input-error');
-                   document.querySelector('i').classList.remove('formulario__validacion-estado');
-                   document.querySelector('i').classList.add('formulario__validacion-estado-error');
-                   document.querySelector('p').classList.remove('parrafoNombre');
-                   document.querySelector('p').classList.add('parrafoNombre-error');
-                }
+                validarCampo(expresiones.nombre, e.target, 'nombre');
             break;
         case "apellidos":
-                //console.log("funciona");
-                if (expresiones.nombre.test(e.target.value) || e.target.value=="") {
-                    document.getElementById('apellidos').classList.remove('formulario__input-error');
-                    document.getElementById('apellidos').classList.add('formulario__input-correcto');
-                    document.querySelector('i').classList.remove('formulario__validacion-estado-error');
-                    document.querySelector('i').classList.add('formulario__validacion-estado');
-                    document.querySelector('p').classList.remove('parrafoApellido-error');
-                   document.querySelector('p').classList.add('parrafoApellido');
-                    
-                }else{
-                    document.getElementById('usuario').classList.remove('formulario__input-correcto'); 
-                   document.getElementById('usuario').classList.add('formulario__input-error');
-                   document.querySelector('i').classList.remove('formulario__validacion-estado');
-                   document.querySelector('i').classList.add('formulario__validacion-estado-error');
-                   document.querySelector('p').classList.remove('parrafoApellido');
-                   document.querySelector('p').classList.add('parrafoApellido-error');
-                }
+            validarCampo(expresiones.nombre, e.target, 'apellidos');
             break;
         case "correo":
-                //console.log("funciona");
-                if (expresiones.correo.test(e.target.value) || e.target.value=="") {
-                    document.getElementById('correo').classList.remove('formulario__input-error');
-                    document.getElementById('correo').classList.add('formulario__input-correcto');
-                    document.querySelector('i').classList.remove('formulario__validacion-estado-error');
-                    document.querySelector('i').classList.add('formulario__validacion-estado');
-                    document.querySelector('p').classList.remove('parrafoCorreo-error');
-                   document.querySelector('p').classList.add('parrafoCorreo');
-                    
-                }else{
-                    document.getElementById('correo').classList.remove('formulario__input-correcto'); 
-                   document.getElementById('correo').classList.add('formulario__input-error');
-                   document.querySelector('i').classList.remove('formulario__validacion-estado');
-                   document.querySelector('i').classList.add('formulario__validacion-estado-error');
-                   document.querySelector('p').classList.remove('parrafoCorreo');
-                   document.querySelector('p').classList.add('parrafoCorreo-error');
-                }
+            validarCampo(expresiones.nombre, e.target, 'correo');
             break;
         case "telefono":
-                //console.log("funciona");
-                if (expresiones.telefono.test(e.target.value) || e.target.value=="") {
-                    document.getElementById('telefono').classList.remove('formulario__input-error');
-                    document.getElementById('telefono').classList.add('formulario__input-correcto');
-                    document.querySelector('i').classList.remove('formulario__validacion-estado-error');
-                    document.querySelector('i').classList.add('formulario__validacion-estado');
-                    document.querySelector('p').classList.remove('parrafoTelefono-error');
-                   document.querySelector('p').classList.add('parrafoTelefono');
-                    
-                }else{
-                    document.getElementById('telefono').classList.remove('formulario__input-correcto'); 
-                   document.getElementById('telefono').classList.add('formulario__input-error');
-                   document.querySelector('i').classList.remove('formulario__validacion-estado');
-                   document.querySelector('i').classList.add('formulario__validacion-estado-error');
-                   document.querySelector('p').classList.remove('parrafoTelefono');
-                   document.querySelector('p').classList.add('parrafoTelefono-error');
-                }
+            validarCampo(expresiones.nombre, e.target, 'telefono');
             break
         case "usuario":
-                //console.log("funciona");
-                if (expresiones.usuario.test(e.target.value) || e.target.value=="") {
-                    document.getElementById('usuario').classList.remove('formulario__input-error');
-                    document.getElementById('usuario').classList.add('formulario__input-correcto');
-                    document.querySelector('i').classList.remove('formulario__validacion-estado-error');
-                    document.querySelector('i').classList.add('formulario__validacion-estado');
-                    document.querySelector('p').classList.remove('parrafoUsuario-error');
-                   document.querySelector('p').classList.add('parrafoUsuario');
-                    
-                }else{
-                    document.getElementById('usuario').classList.remove('formulario__input-correcto'); 
-                   document.getElementById('usuario').classList.add('formulario__input-error');
-                   document.querySelector('i').classList.remove('formulario__validacion-estado');
-                   document.querySelector('i').classList.add('formulario__validacion-estado-error');
-                   document.querySelector('p').classList.remove('parrafoUsuario');
-                   console.log(document.querySelector('p').classList.remove('parrafoUsuario'));
-                   document.querySelector('p').classList.add('parrafoUsuario-error');
-                }
+            validarCampo(expresiones.nombre, e.target, 'usuario');
             break
         case "fecha":
-                //console.log("funciona");
-                if (expresiones.fecha.test(e.target.value) || e.target.value=="") {
-                    document.getElementById('fecha').classList.remove('formulario__input-error');
-                    document.getElementById('fecha').classList.add('formulario__input-correcto');
-                    document.querySelector('i').classList.remove('formulario__validacion-estado-error');
-                    document.querySelector('i').classList.add('formulario__validacion-estado');
-                    document.querySelector('p').classList.remove('parrafoFecha-error');
-                   document.querySelector('p').classList.add('parrafoFecha');
-                    
-                }else{
-                    document.getElementById('fecha').classList.remove('formulario__input-correcto'); 
-                   document.getElementById('fecha').classList.add('formulario__input-error');
-                   document.querySelector('i').classList.remove('formulario__validacion-estado');
-                   document.querySelector('i').classList.add('formulario__validacion-estado-error');
-                   document.querySelector('p').classList.remove('parrafoFecha');
-                   document.querySelector('p').classList.add('parrafoFecha-error');
-                }
+            validarCampo(expresiones.nombre, e.target, 'fecha');
             break
 
         default:
             break;
     }
 
+}
+
+const validarCampo = (expresion, input, campo) => {
+    if (expresion.test(input.value) || input.value=="") {
+        document.getElementById(campo).classList.remove('formulario__input-error');
+        document.getElementById(campo).classList.add('formulario__input-correcto');
+        document.querySelector('i').classList.remove('formulario__validacion-estado-error');
+        document.querySelector('i').classList.add('formulario__validacion-estado');
+        document.querySelector('p').classList.remove('parrafo-error');
+       document.querySelector('p').classList.add('parrafo');
+        
+    }else{
+        document.getElementById(campo).classList.remove('formulario__input-correcto'); 
+       document.getElementById(campo).classList.add('formulario__input-error');
+       document.querySelector('i').classList.remove('formulario__validacion-estado');
+       document.querySelector('i').classList.add('formulario__validacion-estado-error');
+       document.querySelector('p').classList.remove('parrafo');
+       document.querySelector('p').classList.add('parrafo-error');
+    }
 }
 
 inputs.forEach((input) => {
