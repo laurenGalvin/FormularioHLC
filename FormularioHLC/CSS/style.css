@@ -120,63 +120,13 @@ body{
 
 /* -------------------------- PARRAFOS CORRECTORES ----------------------- */
 
-.parrafoNombre {
+.parrafo {
 	font-size: 12px;
 	margin-bottom: 0;
     display: none;
 }
-.parrafoNombre-error {
+.parrafo-error {
 	font-size: 12px;
 	margin-bottom: 0;
 }
 
-.parrafoApellido{
-	font-size: 12px;
-	margin-bottom: 0;
-	display: none;
-}
-.parrafoApellido-error {
-	font-size: 12px;
-	margin-bottom: 0;
-}
-
-.parrafoCorreo {
-	font-size: 12px;
-	margin-bottom: 0;
-	display: none;
-}
-.parrafoCorreo-error {
-	font-size: 12px;
-	margin-bottom: 0;
-}
-
-.parrafoTelefono {
-	font-size: 12px;
-	margin-bottom: 0;
-	display: none;
-}
-.parrafoTelefono-error {
-	font-size: 12px;
-	margin-bottom: 0;
-}
-
-.parrafoUsuario {
-	font-size: 12px;
-	margin-bottom: 0;
-	display: none;
-}
-.parrafoUsuario-error {
-	font-size: 12px;
-    margin-bottom: 0;
-    
-}
-
-.parrafoFecha {
-	font-size: 12px;
-	margin-bottom: 0;
-	display: none;
-}
-.parrafoFecha-error {
-	font-size: 12px;
-	margin-bottom: 0;
-}
