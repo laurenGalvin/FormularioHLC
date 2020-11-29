@@ -49,9 +49,16 @@ const expresiones={
     fecha:/^(\d{1,2})-(\d{1,2})-(\d{4})$/
 }
 
+const campos = {
+    nombre:false,
+    apellidos:false,
+    correo:false,
+    telefono:false,
+    usuario:false,
+    fecha:false
+}
+
 const validarFormulario = (e) => {
-    //console.log("se ejecuto");
-    //console.log(e.target.name);
     
     switch (e.target.name) {
         case "nombre":
@@ -61,16 +68,16 @@ const validarFormulario = (e) => {
             validarCampo(expresiones.nombre, e.target, 'apellidos');
             break;
         case "correo":
-            validarCampo(expresiones.nombre, e.target, 'correo');
+            validarCampo(expresiones.correo, e.target, 'correo');
             break;
         case "telefono":
-            validarCampo(expresiones.nombre, e.target, 'telefono');
+            validarCampo(expresiones.telefono, e.target, 'telefono');
             break
         case "usuario":
-            validarCampo(expresiones.nombre, e.target, 'usuario');
+            validarCampo(expresiones.usuario, e.target, 'usuario');
             break
         case "fecha":
-            validarCampo(expresiones.nombre, e.target, 'fecha');
+            validarCampo(expresiones.fecha, e.target, 'fecha');
             break
 
         default:
@@ -87,7 +94,7 @@ const validarCampo = (expresion, input, campo) => {
         document.querySelector('i').classList.add('formulario__validacion-estado');
         document.querySelector('p').classList.remove('parrafo-error');
        document.querySelector('p').classList.add('parrafo');
-        
+       campos[campo]=true; 
     }else{
         document.getElementById(campo).classList.remove('formulario__input-correcto'); 
        document.getElementById(campo).classList.add('formulario__input-error');
@@ -95,6 +102,7 @@ const validarCampo = (expresion, input, campo) => {
        document.querySelector('i').classList.add('formulario__validacion-estado-error');
        document.querySelector('p').classList.remove('parrafo');
        document.querySelector('p').classList.add('parrafo-error');
+       campos[campo]=false;
     }
 }
 
@@ -105,6 +113,12 @@ inputs.forEach((input) => {
 
 formulario.addEventListener('submit', (e) =>{
     e.preventDefault();
+    if (campos.nombre && campos.apellidos && campos.correo && campos.telefono && campos.usuario && campos.fecha) {
+            formulario.reset();
+            alert("El formulario se envio.");
+    }else{
+            alert("El formulario tiene datos incorrectos o no estan rellenos.");
+    }
 });
 
 
