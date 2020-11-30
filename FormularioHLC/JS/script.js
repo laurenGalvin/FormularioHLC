@@ -57,7 +57,8 @@ const campos = {
     usuario:false,
     fecha:false
 }
-
+//e.target.name lo que contiene es el envento o imput que tu clicas o donde escribes
+//Si tu el evento lo realizas devuelve el nombre del imput clicado.
 const validarFormulario = (e) => {
     
     switch (e.target.name) {
