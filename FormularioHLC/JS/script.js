@@ -131,6 +131,12 @@ formulario.addEventListener('submit', (e) =>{
 });
 
 
+formulario.addEventListener('reset', (e1) =>{
+    formulario.reset();
+    
+});
+
+
 
 
 
