@@ -89,7 +89,10 @@ const validarFormulario = (e) => {
 //Esta funcion lo que hace es validar todos los campos de la misma forma ya que lo unico que
 //cambia es el contenido introducido y su validacion por las expresiones regulares.
 const validarCampo = (expresion, input, campo) => {
-    //En este if 
+    //En este if lo que hago es configurar el estilo que tiene cada campo con dos tipos de 
+    // estilo diferentes uno para el relleno erroneo y otro para el relleno correcto.
+    //Exactamente lo que hace es cambiar un atributo "class" de los imputs por otro con estilo
+    //de error. 
     if (expresion.test(input.value) || input.value=="") {
         document.getElementById(campo).classList.remove('formulario__input-error');
         document.getElementById(campo).classList.add('formulario__input-correcto');
