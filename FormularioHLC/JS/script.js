@@ -39,7 +39,7 @@ for (i = 0; i < inpunts_correcto.length; i++) {
 //-------------------------------------------------------------
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
-
+//Son constantes de expresiones regulares que ayudan a la validacion de datos.
 const expresiones={
     usuario:/^[a-zA-Z0-9\_\-]{4,16}$/,
     nombre:/^[a-zA-ZÁ-ÿ\s]{1,40}$/,
@@ -48,7 +48,7 @@ const expresiones={
     telefono:/^\d{7,14}$/,
     fecha:/^(\d{1,2})-(\d{1,2})-(\d{4})$/
 }
-
+//Estas constantes son para el submit de enviar.
 const campos = {
     nombre:false,
     apellidos:false,
@@ -86,8 +86,10 @@ const validarFormulario = (e) => {
     }
 
 }
-
+//Esta funcion lo que hace es validar todos los campos de la misma forma ya que lo unico que
+//cambia es el contenido introducido y su validacion por las expresiones regulares.
 const validarCampo = (expresion, input, campo) => {
+    //En este if 
     if (expresion.test(input.value) || input.value=="") {
         document.getElementById(campo).classList.remove('formulario__input-error');
         document.getElementById(campo).classList.add('formulario__input-correcto');
@@ -112,6 +114,9 @@ inputs.forEach((input) => {
     input.addEventListener('blur', validarFormulario);
 });
 
+//Aqui en este ultimo paso lo que hacemos es añadirle un evento al submit que hace que si 
+//todos los campso estan bien rellenados te mande un alert para que sepas que estan correctamente
+//rellenados o no.
 formulario.addEventListener('submit', (e) =>{
     e.preventDefault();
     if (campos.nombre && campos.apellidos && campos.correo && campos.telefono && campos.usuario && campos.fecha) {
